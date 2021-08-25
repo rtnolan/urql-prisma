@@ -3,13 +3,21 @@ const { gql, createClient } = require("@urql/core");
 
 const client = createClient({ url: "http://localhost:4000/graphql" });
 
-const mutation = gql`
-  mutation Mutation($createUserData: UserCreateInput!) {
-    createUser(data: $createUserData) {
-      id
-    }
-  }
-`;
+// const mutation = gql`
+//   mutation Mutation($createUserData: UserCreateInput!) {
+//     createUser(data: $createUserData) {
+//       id
+//     }
+//   }
+// `;
+
+let userId;
+
+// client.mutation(mutation, {
+//   createUserData: {
+//     email: "<whatever>",
+//   },
+// }).toPromise().then((result) => { userId = result.data.createUser.id; });
 
 const query = gql`
   query Query($userWhere: UserWhereUniqueInput!) {
@@ -22,24 +30,18 @@ const query = gql`
   }
 `;
 
+// cksr9chin0000tlmljft8yaks - has Info Object
+// cksr9csqe0009tlmlbezm013p - no Info Object
+
+userId = "cksr9chin0000tlmljft8yaks";
+
 client
-  .mutation(mutation, {
-    createUserData: {
-      email: "testuser5@test.com",
+  .query(query, {
+    userWhere: {
+      id: userId,
     },
   })
   .toPromise()
   .then((result) => {
-    const userId = result.data.createUser.id;
-    console.log("id ", userId);
-    client
-      .query(query, {
-        userWhere: {
-          id: userId,
-        },
-      })
-      .toPromise()
-      .then((result) => {
-        console.log(result);
-      });
+    console.log("result", result);
   });

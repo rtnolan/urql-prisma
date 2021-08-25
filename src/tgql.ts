@@ -5,7 +5,7 @@ import {
   UserRelationsResolver,
 } from "@generated/type-graphql";
 import { PrismaClient } from "@prisma/client";
-import { ApolloServer } from "apollo-server";
+import { ApolloServer, gql } from "apollo-server";
 
 const prisma = new PrismaClient({
   rejectOnNotFound: {
