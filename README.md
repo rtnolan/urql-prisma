@@ -2,7 +2,7 @@
 
 `npm i`
 
-`npm run up && npm run generat`
+`npm run up && npm run generate`
 
 Run server with no TypeGraphQL: `npm run apollo`
 Run server with TypeGraphQL: `npm run tgql`
