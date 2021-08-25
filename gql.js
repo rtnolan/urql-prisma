@@ -33,7 +33,7 @@ const query = gql`
 // cksr9chin0000tlmljft8yaks - has Info Object
 // cksr9csqe0009tlmlbezm013p - no Info Object
 
-userId = "cksr9chin0000tlmljft8yaks";
+userId = "cksr9csqe0009tlmlbezm013p";
 
 client
   .query(query, {

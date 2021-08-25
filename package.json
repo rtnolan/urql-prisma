@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "apollo": "ts-node-dev --transpile-only --no-notify src/apollo.ts",
-    "tgql": "ts-node-dev --transpile-only --no-notify src/tgql.ts",
+    "dev": "ts-node-dev --transpile-only --no-notify src/index.ts",
     "generate": "prisma generate",
     "up": "prisma migrate dev"
   },

@@ -1,0 +1,11 @@
+export { AggregateInfoArgs } from "./AggregateInfoArgs";
+export { CreateInfoArgs } from "./CreateInfoArgs";
+export { DeleteInfoArgs } from "./DeleteInfoArgs";
+export { DeleteManyInfoArgs } from "./DeleteManyInfoArgs";
+export { FindFirstInfoArgs } from "./FindFirstInfoArgs";
+export { FindManyInfoArgs } from "./FindManyInfoArgs";
+export { FindUniqueInfoArgs } from "./FindUniqueInfoArgs";
+export { GroupByInfoArgs } from "./GroupByInfoArgs";
+export { UpdateInfoArgs } from "./UpdateInfoArgs";
+export { UpdateManyInfoArgs } from "./UpdateManyInfoArgs";
+export { UpsertInfoArgs } from "./UpsertInfoArgs";

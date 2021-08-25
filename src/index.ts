@@ -1,11 +1,13 @@
 import "reflect-metadata";
 import { buildSchema } from "type-graphql";
+import { PrismaClient } from "@prisma/client";
+import { ApolloServer } from "apollo-server";
 import {
+  InfoCrudResolver,
+  InfoRelationsResolver,
   UserCrudResolver,
   UserRelationsResolver,
-} from "@generated/type-graphql";
-import { PrismaClient } from "@prisma/client";
-import { ApolloServer, gql } from "apollo-server";
+} from "../prisma/generated/type-graphql";
 
 const prisma = new PrismaClient({
   rejectOnNotFound: {
@@ -15,9 +17,17 @@ const prisma = new PrismaClient({
   },
 });
 
+// cksr9chin0000tlmljft8yaks -- user with info object
+// cksr9csqe0009tlmlbezm013p -- user without info object
+
 const createSchema = async () => {
   return await buildSchema({
-    resolvers: [UserCrudResolver, UserRelationsResolver],
+    resolvers: [
+      UserCrudResolver,
+      UserRelationsResolver,
+      InfoCrudResolver,
+      InfoRelationsResolver,
+    ],
   });
 };
 
